@@ -41,6 +41,7 @@ export const projects: Project[] = [
       en: 'Procedural creature generation engine. Physically simulated bodies drive procedural animation, rendered as pseudo-3D pixel art from a from-scratch C++ pipeline.',
       es: 'Motor de generación procedural de criaturas. Cuerpos con física simulada impulsan animación procedural, renderizada en pixel art pseudo-3D desde un pipeline en C++ construido desde cero.',
     },
+    repo: 'https://github.com/Mango77x/Creatures',
     diagram: 'creature',
   },
   {
@@ -53,6 +54,8 @@ export const projects: Project[] = [
       en: 'Internal logistics system. Tracks stock, orders and shipments, and assigns vehicles across land, air and sea routes through a REST API backed by PostgreSQL.',
       es: 'Sistema logístico interno. Gestiona stock, pedidos y envíos, y asigna vehículos por rutas de tierra, aire y mar a través de una API REST respaldada por PostgreSQL.',
     },
+    repo: 'https://github.com/Mango77x/MOLS',
+    demo: 'https://mols-demo.onrender.com/app',
     diagram: 'route',
   },
   {
@@ -79,6 +82,7 @@ export const projects: Project[] = [
       en: 'Real-time news feed, filtered and summarized by AI as stories break.',
       es: 'Feed de noticias en tiempo real, filtrado y resumido por IA a medida que ocurren.',
     },
+    repo: 'https://github.com/Mango77x/Pulse',
     diagram: 'feed',
   },
 ]
