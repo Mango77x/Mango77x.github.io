@@ -6,7 +6,6 @@
 @import "@fontsource/ibm-plex-sans/700.css";
 @import "@fontsource/ibm-plex-mono/400.css";
 @import "@fontsource/ibm-plex-mono/500.css";
-@import "@fontsource/libre-caslon-text/400.css";
 
 :root {
   color-scheme: light;
@@ -47,7 +46,6 @@
   --color-ink: var(--ink);
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-display: "Libre Caslon Text", Georgia, serif;
 }
 
 @layer base {
@@ -72,11 +70,9 @@
   }
 }
 
-.display-type {
-  font-family: "Libre Caslon Text", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -.065em;
-}
+.stroke-title { color: var(--ink); width: 100%; }
+.stroke-title svg { max-height: 150px; }
+.stroke-project svg { max-height: 76px; }
 .technical-label {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 9px;
