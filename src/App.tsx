@@ -2,6 +2,7 @@ import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import { projects } from './data/projects'
 import Hero from './components/Hero'
 import ProjectCard from './components/ProjectCard'
+import StrokeText from './components/StrokeText'
 import Footer from './components/Footer'
 import { strings } from './i18n/strings'
 
@@ -19,7 +20,7 @@ function Portfolio() {
         <div className="mb-12 flex items-end justify-between gap-6 border-b border-rule pb-5">
           <div>
             <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">{strings.work[lang]} / 2026</p>
-            <h2 className="display-type mt-3 text-4xl text-paper md:text-6xl">{strings.featuredLabel[lang]}</h2>
+            <h2 className="stroke-title max-w-[620px]"><StrokeText text={strings.featuredLabel[lang]} fontSize={66} maxWidth={620} /></h2>
           </div>
           <span className="hidden font-mono text-[9px] uppercase tracking-[0.14em] text-muted sm:block">01 — {String(projects.length).padStart(2, '0')}</span>
         </div>
@@ -31,7 +32,7 @@ function Portfolio() {
             <span className="font-mono text-[9px] text-accent">02</span>
             <div className="h-px flex-1 bg-rule" />
           </div>
-          <h2 id="selected-heading" className="display-type mb-3 text-3xl text-paper md:text-5xl">{strings.selectedLabel[lang]}</h2>
+          <h2 id="selected-heading" className="stroke-title max-w-[560px] mb-3"><StrokeText text={strings.selectedLabel[lang]} fontSize={58} maxWidth={560} /></h2>
           <div className="grid gap-x-12 md:grid-cols-2">
             {selected.map((project) => <ProjectCard key={project.id} project={project} />)}
           </div>
@@ -43,7 +44,7 @@ function Portfolio() {
             <div className="h-px flex-1 bg-rule" />
           </div>
           <div className="mb-8 max-w-2xl">
-            <h2 id="archive-heading" className="display-type text-3xl text-paper md:text-5xl">{strings.experimentsLabel[lang]}</h2>
+            <h2 id="archive-heading" className="stroke-title max-w-[560px]"><StrokeText text={strings.experimentsLabel[lang]} fontSize={58} maxWidth={560} /></h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">{strings.experimentsIntro[lang]}</p>
           </div>
           {prototypes.map((project) => <ProjectCard key={project.id} project={project} />)}
