@@ -14,61 +14,43 @@
   --color-muted: #a0a7a6;
   --color-rule: #3b4445;
   --color-accent: #c58b55;
-
+  --color-sheet: #e9e6dc;
+  --color-ink: #252a2a;
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 @layer base {
-  * {
-    border-color: var(--color-rule);
-  }
-
-  html {
-    color-scheme: dark;
-    scroll-behavior: smooth;
-    background: var(--color-carbon);
-  }
-
-  body {
-    margin: 0;
-    background: var(--color-carbon);
-    color: var(--color-paper);
-    font-family: var(--font-sans);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  ::selection {
-    background: var(--color-accent);
-    color: var(--color-carbon);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 3px;
-  }
-
-  a {
-    text-decoration-thickness: 1px;
-  }
-
+  * { border-color: var(--color-rule); }
+  html { color-scheme: dark; scroll-behavior: smooth; background: var(--color-carbon); }
+  body { margin: 0; background: var(--color-carbon); color: var(--color-paper); font-family: var(--font-sans); font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  ::selection { background: var(--color-accent); color: var(--color-carbon); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  a { text-decoration-thickness: 1px; }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      scroll-behavior: auto !important;
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
 }
 
-.technical-grid {
-  background-image:
-    linear-gradient(to right, rgba(160, 167, 166, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(160, 167, 166, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: linear-gradient(to bottom right, black, transparent 95%);
+.document-topline, .document-bottomline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); padding: 10px 0; color: var(--color-muted); font: 9px/1.5 "IBM Plex Mono", monospace; letter-spacing: .13em; text-transform: uppercase; }
+.document-bottomline { align-items: center; }
+.dossier { overflow: hidden; border: 1px solid rgba(233,230,220,.2); background: var(--color-sheet); color: var(--color-ink); }
+.dossier-featured { margin-bottom: 0; }
+.dossier-compact { margin-top: 22px; }
+.dossier-heading, .dossier-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; padding: 13px 18px; border-bottom: 1px solid rgba(37,42,42,.2); }
+.dossier-footer { border-top: 1px solid rgba(37,42,42,.2); border-bottom: 0; color: rgba(37,42,42,.5); font: 9px/1.5 "IBM Plex Mono", monospace; letter-spacing: .12em; }
+.dossier-heading > span { color: rgba(37,42,42,.5); }
+.dossier-body { display: grid; gap: 28px; padding: 24px 18px; }
+.dossier-copy { min-width: 0; }
+.dossier-illustration { min-width: 0; align-self: center; }
+.drawing-sheet { color: var(--color-ink); }
+.drawing-grid { pointer-events: none; background-image: linear-gradient(rgba(37,42,42,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(37,42,42,.055) 1px, transparent 1px); background-size: 20px 20px; }
+@media (min-width: 900px) {
+  .dossier-body { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 38px; padding: 34px 28px; }
+  .dossier-featured .dossier-body { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); padding: 42px 34px; }
+  .dossier-heading, .dossier-footer { padding-left: 28px; padding-right: 28px; }
+}
+@media (max-width: 520px) {
+  .dossier-heading, .dossier-footer { padding-left: 12px; padding-right: 12px; }
+  .dossier-body { padding: 20px 12px; }
 }
