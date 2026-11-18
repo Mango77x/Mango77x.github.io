@@ -1,6 +1,7 @@
+import type { ReactNode } from 'react'
 import type { Project } from '../data/projects'
 
-function DrawingFrame({ children, label, code }: { children: React.ReactNode; label: string; code: string }) {
+function DrawingFrame({ children, label, code }: { children: ReactNode; label: string; code: string }) {
   return (
     <div className="drawing-sheet relative overflow-hidden border border-ink/20 bg-sheet">
       <div className="drawing-grid absolute inset-0" />
