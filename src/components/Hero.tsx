@@ -1,5 +1,6 @@
 import LanguageToggle from './LanguageToggle'
 import ThemeToggle from './ThemeToggle'
+import StrokeText from './StrokeText'
 import { useLanguage } from '../i18n/LanguageContext'
 import { strings } from '../i18n/strings'
 
@@ -25,7 +26,7 @@ export default function Hero() {
           <div className="grid gap-10 py-12 md:grid-cols-[1fr_280px] md:items-end md:py-16">
             <div>
               <p className="mb-7 font-mono text-[9px] uppercase tracking-[0.22em] text-accent">{strings.eyebrow[lang]}</p>
-              <h1 className="display-type text-[clamp(4.2rem,10vw,9.6rem)] leading-[0.88] text-paper">Antoine<br/>Giz<span className="text-accent">.</span></h1>
+              <h1 className="stroke-title max-w-[850px]"><StrokeText text="Antoine Giz" fontSize={126} maxWidth={850} /></h1>
               <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">Mango77x / {strings.role[lang]}</p>
               <p className="mt-7 max-w-3xl text-base leading-[1.85] text-muted md:text-lg">{strings.thesis[lang]}</p>
             </div>
