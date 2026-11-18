@@ -2,6 +2,7 @@ import type { Project } from '../data/projects'
 import { useLanguage } from '../i18n/LanguageContext'
 import { strings } from '../i18n/strings'
 import ProjectDiagram from './ProjectDiagram'
+import StrokeText from './StrokeText'
 
 export default function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   const { lang } = useLanguage()
@@ -21,9 +22,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
       <div className="dossier-body">
         <div className="dossier-copy">
           <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.16em] text-accent">PROJECT {project.index} / {project.group}</p>
-          <h3 className={featured ? 'display-type text-5xl text-ink md:text-7xl' : 'display-type text-4xl text-ink md:text-5xl'}>
-            {project.name}<span className="text-accent">.</span>
-          </h3>
+          <h3 className={featured ? 'stroke-title stroke-project max-w-[520px]' : 'stroke-title stroke-project max-w-[390px]'}><StrokeText text={project.name} fontSize={featured ? 88 : 68} maxWidth={featured ? 520 : 390} /></h3>
           <p className="mt-5 max-w-2xl text-sm leading-[1.85] text-ink/75 md:text-base">{project.description[lang]}</p>
           <div className="mt-6">
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-ink/50">Technical scope</p>

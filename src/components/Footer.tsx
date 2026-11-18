@@ -1,6 +1,7 @@
 import { contact } from '../data/contact'
 import { useLanguage } from '../i18n/LanguageContext'
 import { strings } from '../i18n/strings'
+import StrokeText from './StrokeText'
 
 export default function Footer() {
   const { lang } = useLanguage()
@@ -12,7 +13,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">{strings.location[lang]}</p>
-            <h2 className="display-type mt-4 text-5xl text-paper md:text-7xl">{strings.contactTitle[lang]}<span className="text-accent">.</span></h2>
+            <h2 className="stroke-title max-w-[620px] mt-4"><StrokeText text={strings.contactTitle[lang]} fontSize={76} maxWidth={620} /></h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted">{strings.contactText[lang]}</p>
           </div>
           <div className="flex flex-col gap-4 font-mono text-[10px] uppercase tracking-[0.12em] md:items-end">
