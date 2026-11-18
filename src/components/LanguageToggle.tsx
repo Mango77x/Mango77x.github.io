@@ -7,7 +7,7 @@ export default function LanguageToggle({ className }: { className?: string }) {
     <button
       type="button"
       onClick={toggle}
-      className={`font-mono text-xs tracking-widest uppercase border border-rule px-2 py-1 text-muted hover:text-signal hover:border-signal transition-colors ${className ?? ''}`}
+      className={`border border-rule px-2 py-1 font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:border-accent hover:text-accent ${className ?? ''}`}
       aria-label={`Switch language to ${lang === 'en' ? 'Spanish' : 'English'}`}
     >
       {lang.toUpperCase()} / {strings.langToggle[lang]}
