@@ -91,6 +91,31 @@ function CreaturesDrawing() {
   </DrawingFrame>
 }
 
+
+function KaloDrawing() {
+  return <DrawingFrame label="Meal logging and nutrition pipeline" code="KAL-05">
+    <g className={line} strokeWidth="1.4">
+      <rect x="25" y="105" width="100" height="82"/><rect x="160" y="105" width="100" height="82"/><rect x="295" y="105" width="100" height="82"/><rect x="430" y="105" width="105" height="82"/>
+      <path d="M125 146H160M260 146H295M395 146H430"/>
+      <path d="M75 187V230H345V187" strokeDasharray="4 4"/>
+      <circle cx="75" cy="140" r="12"/><path d="M66 140H84M75 131V149M182 130H238M182 145H230M182 160H238M317 130H373M317 145H365M317 160H373M450 130H515M450 145H505M450 160H515"/>
+    </g>
+    <g fill="currentColor" fontSize="9" textAnchor="middle" fontFamily="monospace"><text x="75" y="95">MEAL INPUT</text><text x="210" y="95">AI PARSING</text><text x="345" y="95">NUTRITION</text><text x="482" y="95">DAILY LOG</text><text x="210" y="250">TEXT / PHOTO ENTRY</text></g>
+  </DrawingFrame>
+}
+
+function PulseDrawing() {
+  return <DrawingFrame label="News aggregation and filtering flow" code="PLS-06">
+    <g className={line} strokeWidth="1.4">
+      <rect x="35" y="65" width="115" height="55"/><rect x="35" y="145" width="115" height="55"/><rect x="220" y="105" width="120" height="75"/><rect x="410" y="105" width="115" height="75"/>
+      <path d="M150 92H185V142H220M150 172H185V142M340 142H410"/>
+      <path d="M230 123H330M230 140H315M230 157H325M420 123H515M420 140H505M420 157H515"/>
+    </g>
+    <g fill="currentColor" fontSize="9" textAnchor="middle" fontFamily="monospace"><text x="92" y="55">NEWS SOURCES</text><text x="92" y="135">RSS / WEB FEEDS</text><text x="280" y="95">FILTER + RANK</text><text x="467" y="95">STORY FEED</text><text x="280" y="220">AI-ASSISTED SUMMARIES</text></g>
+    <g className={line} strokeWidth="1"><path d="M280 180V202H467V180" strokeDasharray="3 4"/></g>
+  </DrawingFrame>
+}
+
 function GenericDrawing({ project }: { project: Project }) {
   return <DrawingFrame label="Application system overview" code={`APP-${project.index}`}>
     <g className={line} strokeWidth="1.4">
@@ -108,6 +133,8 @@ export default function ProjectDiagram({ project }: { project: Project }) {
     case 'swarmhq': return <SwarmDrawing />
     case 'mols': return <MolsDrawing />
     case 'creatures': return <CreaturesDrawing />
+    case 'kalo': return <KaloDrawing />
+    case 'pulse': return <PulseDrawing />
     default: return <GenericDrawing project={project} />
   }
 }
